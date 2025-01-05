@@ -1,1 +1,116 @@
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    color: #fff;
+    background-color: #000;
+}
+
+header {
+    background: #333;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1000;
+}
+
+nav ul {
+    list-style: none;
+    display: flex;
+    justify-content: space-around;
+}
+
+nav a {
+    color: #fff;
+    text-decoration: none;
+    padding: 0.5rem;
+}
+
+.hero-banner {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    background: url('assets/Charecters Of Batman.jpg') no-repeat center center/cover;
+    position: relative;
+}
+
+.hero-banner h1 {
+    font-size: 3rem;
+}
+
+#portfolio-cta {
+    background: #ff6347;
+    border: none;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#portfolio-cta:hover {
+    background: #ff4500;
+}
+
+.portfolio-gallery {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.portfolio-gallery .item {
+    flex: 1 1 calc(33.333% - 1rem);
+    margin: 0.5rem;
+    background: #444;
+    padding: 1rem;
+    border-radius: 8px;
+    position: relative;
+    perspective: 1000px;
+}
+
+.portfolio-gallery .item:hover {
+    transform: rotateY(20deg);
+}
+
+#cv-button {
+    background: #00bfff;
+    border: none;
+    color: #fff;
+    padding: 1rem 2rem;
+    font-size: 1.2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+#cv-button:hover {
+    background: #1e90ff;
+}
+
+.contact-form input, .contact-form textarea {
+    width: 100%;
+    padding: 1rem;
+    margin: 0.5rem 0;
+    border-radius: 5px;
+    border: 1px solid #555;
+}
+
+.contact-form button {
+    background: #32cd32;
+    border: none;
+    color: #fff;
+    padding: 1rem 2rem;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.contact-form button:hover {
+    background: #228b22;
+}
+
+#map {
+    height: 400px;
+    width: 100%;
+    background-color: #ddd;
+}
 

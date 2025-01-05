@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<title>Notes by Department</title>
+</head>
+<style>
+ * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-image: url('slide2.jpg');
+  background-size:cover;
+}
+body {
+    position: relative;
+    font-family: Poppins, sans-serif;
+    }
+
+    body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.5); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    opacity: 0.5; /* Adjust background image opacity */
+    z-index: -1; /* Keep the overlay behind the content */
+    }
+h1 {
+  margin-bottom:-50px;
+  margin-top:35px;
+  font-size: 2rem;
+  color: #fff;
+  text-align: center;
+}
+
+.icon-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  padding: 40px;
+  width: 90%;
+  margin-top:80px;
+}
+
+/* Style for each icon box */
+.icon-box {
+  text-align: center;
+  padding: 20px;
+  border-radius: 10px;
+  background-color: rgba(255, 255, 255, 0.5);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s;
+  text-decoration: none;
+  color: #333;
+}
+
+.icon-box img {
+  width: 60px;
+  height: 60px;
+  margin-bottom: 10px;
+}
+
+.icon-box p {
+  font-size: 1.1rem;
+  font-weight: bold;
+}
+
+.icon-box:hover {
+  transform: scale(1.05);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .icon-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 480px) {
+  .icon-grid {
+    grid-template-columns: 1fr;
+  }
+
+  h1 {
+    font-size: 1.5rem;
+  }
+
+  .icon-box img {
+    width: 50px;
+    height: 50px;
+  }
+
+  .icon-box p {
+    font-size: 1rem;
+  }
+}
+</style>
+<body>
+
+  <h1>Notes by Department</h1>
+  <div class="icon-grid">
+    <a href="https://cse.poriyaan.in/" class="icon-box">
+      <img src="csem-removebg-preview.png" alt="CS Department Icon">
+      <p>Computer Science</p>
+    </a>
+    <a href="https://cse.poriyaan.in/" class="icon-box">
+      <img src="itm-removebg-preview.png" alt="IT Department Icon">
+      <p>Information Technology</p>
+    </a>
+    <a href="https://ece.poriyaan.in/" class="icon-box">
+      <img src="ecem-removebg-preview.png" alt="ECE Department Icon">
+      <p>Electronics & Communication</p>
+    </a>
+    <a href="https://mech.poriyaan.in/" class="icon-box">
+      <img src="mech-removebg-preview.png" alt="Mechanical Department Icon">
+      <p>Mechanical</p>
+    </a>
+    <a href="https://civil.poriyaan.in/" class="icon-box">
+      <img src="civilm-removebg-preview.png" alt="Civil Department Icon">
+      <p>Civil</p>
+    </a>
+    <a href="https://eee.poriyaan.in/" class="icon-box">
+      <img src="eeem-removebg-preview.png" alt="Electrical Engineering Icon">
+      <p>Electronics & Electrical</p>
+    </a>
+  </div>
+
+</body>
+</html>

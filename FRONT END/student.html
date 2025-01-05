@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+  <title>Student Portal</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Poppins, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      position: relative;
+      overflow: hidden;
+      background-color: #2f2f2f; /* Dark background to highlight neon effect */
+      height: 100vh; /* Full height of the viewport */
+    }
+
+    /* Video background styling */
+    .video-background {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: -1; /* Makes sure video is in the background */
+    }
+
+    h1 {
+      font-size: 4rem;
+      color: #fff;
+      margin: 40px 0 20px;
+      text-align: center;
+      position: relative;
+      z-index: 1;
+      margin-top: 50px;
+      white-space: nowrap;
+      overflow: hidden;
+      border-right: 2px solid white; /* Cursor effect */
+      animation: typing 3s steps(30, end), blink 0.5s step-end infinite alternate;
+    }
+
+    .static {
+      animation: none; /* Remove animation */
+      border-right: none; /* Remove cursor effect */
+    }
+
+    @keyframes typing {
+      from {
+        width: 0;
+      }
+      to {
+        width: 100%;
+      }
+    }
+
+    @keyframes blink {
+      from {
+        border-right-color: white;
+      }
+      to {
+        border-right-color: transparent;
+      }
+    }
+
+    .icon-grid {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 50px;
+      width: 90%;
+      margin-top: 70px;
+      padding: 40px;
+      position: relative;
+      z-index: 1;
+    }
+
+    .icon-box {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      text-align: center;
+      padding: 20px;
+      border-radius: 10px;
+      background-color: rgba(255, 255, 255, 0.7);
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s, box-shadow 0.3s;
+      text-decoration: none;
+      color: #333;
+      position: relative;
+      overflow: hidden;
+      border: 2px solid transparent; /* Transparent border for glowing effect */
+      box-shadow: 0 0 10px rgba(255, 255, 255, 0.8), 0 0 30px rgba(128, 128, 128, 0.7); /* Neon glow effect */
+      transition: all 0.3s ease;
+    }
+
+    .icon-box img {
+      width: 60px;
+      height: 60px;
+      margin-bottom: 10px;
+    }
+
+    .icon-box p {
+      font-size: 1.1rem;
+    }
+
+    /* Glowing effect on hover */
+    .icon-box:hover {
+      transform: scale(1.05);
+      box-shadow: 0 0 15px rgba(255, 255, 255, 1), 0 0 50px rgba(128, 128, 128, 1); /* Stronger glow on hover */
+    }
+
+    @media (max-width: 768px) {
+      .icon-grid {
+        grid-template-columns: repeat(2, 1fr);
+      }
+    }
+
+    @media (max-width: 480px) {
+      .icon-grid {
+        grid-template-columns: 1fr;
+      }
+
+      h1 {
+        font-size: 1.5rem;
+      }
+
+      .icon-box img {
+        width: 50px;
+        height: 50px;
+      }
+
+      .icon-box p {
+        font-size: 1rem;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Background video -->
+  <video class="video-background" autoplay muted loop>
+    <source src="https://v1.pinimg.com/videos/mc/720p/e5/7c/98/e57c98dfa4f9de57987563903942e898.mp4" type="video/mp4">
+    Your browser does not support the video tag.
+  </video>
+
+  <h1 id="heading">Welcome to the Student Portal!</h1>
+  <div class="icon-grid">
+    <a href="notesdep.html" class="icon-box">
+      <img src="notes.png" alt="Notes Icon">
+      <p>Notes</p>
+    </a>
+    <a href="https://www.iitm.ac.in/viewgrades" class="icon-box">
+      <img src="result.png" alt="Results Icon">
+      <p>Results</p>
+    </a>
+    <a href="syllabus.html" class="icon-box">
+      <img src="Syllabus.png" alt="Syllabus Icon">
+      <p>Syllabus</p>
+    </a>
+    <a href="https://www.knowafest.com/" class="icon-box">
+      <img src="events.png" alt="Events Icon">
+      <p>Events</p>
+    </a>
+    <a href="courses.html" class="icon-box">
+      <img src="online courses.png" alt="Online Courses Icon">
+      <p>Online Courses</p>
+    </a>
+    <a href="complaint.html" class="icon-box">
+      <img src="complain.png" alt="Complaints Icon">
+      <p>Complaints</p>
+    </a>
+  </div>
+
+  <script>
+    // Add a timeout to remove the typing animation after it finishes
+    window.addEventListener('load', () => {
+      const heading = document.getElementById('heading');
+
+      // Set a timeout matching the typing animation duration
+      setTimeout(() => {
+        heading.classList.add('static'); // Add the 'static' class
+      }, 3000); // 3 seconds (same as the typing animation duration)
+    });
+  </script>
+
+</body>
+</html>

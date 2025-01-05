@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Complaint Form</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            background-image: url('slide2.jpg'); /* Make sure to update the paths to your images */
+            background-position: center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            font-family: 'Poppins', sans-serif; /* Ensure the Poppins font is applied */
+            display: flex; 
+            justify-content: center; 
+            align-items: center;
+            min-height: 100vh; /* Full screen height */
+            flex-direction: column; /* Stack containers vertically */
+        }
+
+        body::before {
+            content: "";
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            background-position: center center;
+            opacity: 0.4; /* Adjust background image opacity */
+            z-index: -1; /* Keep the overlay behind the content */
+        }
+
+        .main-container {
+            display: flex;
+            gap: 20px;
+            justify-content: center;
+            width: 80%;
+            max-width: 1200px;
+            margin-bottom: 20px;
+        }
+
+        .container {
+            width: 45%;
+            padding: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.2);
+            font-weight: bold;
+            color: #fff;
+        }
+
+        h3 {
+            font-size: 24px;
+            text-align: center;
+            color: #fff;
+            margin: -5px 0 10px;
+        }
+
+        label {
+            font-size: 16px;
+            color: #fff;
+            margin-bottom: 5px;
+            display: block;
+        }
+
+        input[type="text"]{
+            width: 90%; /* Reduced width for better spacing */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        select {
+            width: 500px; /* Reduced width for better spacing */
+            padding: 10px;
+            margin-bottom: 20px;
+            border: 2px solid #ddd;
+            border-radius: 5px;
+            transition: border-color 0.3s;
+        }
+
+        input[type="text"]:focus,
+        select:focus {
+            border-color: #6a11cb; /* Focus border color */
+            outline: none;
+        }
+
+        button {
+            width: 95%;
+            background-color: #6a11cb;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 16px;
+            transition: background-color 0.3s;
+			margin-top:15px;
+        }
+
+        button:hover {
+            background-color: #2575fc;
+        }
+
+        /* Styles for disclaimer box */
+        .disclaimer {
+            width: 35%;
+            padding: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            font-size: 15px;
+            color: #fff;
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .disclaimer strong {
+            font-weight: bold;
+            color: #fff;
+        }
+    </style>
+</head>
+<body>
+    <div class="main-container">
+        <div class="container">
+            <h3>Submit Your Complaint</h3>
+            <form id="complaintForm">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" required>
+
+                <label for="email">Your Email:</label>
+                <input type="text" id="email" name="email" required>
+
+                <label for="complaint">Your Complaint:</label>
+                <input type="text" id="complaint" name="complaint" maxlength="400" required>
+
+                <button type="submit">Submit Complaint</button>
+            </form>
+        </div>
+    </div>
+
+    <div class="disclaimer">
+        <strong>Note:</strong> Your complaint will be reviewed by the concerned department.
+    </div>
+	<script>
+        // Listen for form submission
+        document.getElementById('complaintForm').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from submitting normally
+
+            // Get form data
+            const name = encodeURIComponent(document.getElementById('name').value);
+            const email = encodeURIComponent(document.getElementById('email').value);
+            const complaintMessage = encodeURIComponent(document.getElementById('complaint').value);
+
+            // Recipient email
+            const recipient = 'complaintbox@gmail.com';
+
+            // Construct the Gmail compose URL with subject and body
+            const subject = `Complaint from ${name}`;
+            const body = `Name: ${name}\nEmail: ${email}\n\nComplaint Message:\n${complaintMessage}`;
+
+            // Gmail compose link
+            const gmailLink = `https://mail.google.com/mail/?view=cm&fs=1&to=${recipient}&su=${subject}&body=${body}`;
+
+            // Open Gmail compose window
+            window.open(gmailLink, '_blank');
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* General Styles */
+body {
+            font-family: poppins, sans-serif;
+            background-image: url('slide2.jpg'); /* Make sure to update the paths to your images */
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+        background-position:Center Center;
+            color: #fff;
+            padding: 20px;
+        }
+
+body {
+    position: relative;
+    font-family: poppins, sans-serif;
+    }
+
+    body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color:rgba(0,0,0,0.5); 
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    background-position: center center;
+    opacity: 0.5; /* Adjust background image opacity */
+    z-index: -1; /* Keep the overlay behind the content */
+    }
+
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 20px;
+}
+
+/* Banner Container */
+.banner-container {
+    display: flex;
+    justify-content: space-between; /* Space out the banners */
+    flex-wrap: wrap; /* Allow wrapping of banners if necessary */
+    margin-bottom: 30px;
+    width: 100%; /* Make the container width 100% of the parent container */
+    box-sizing: border-box; /* Ensure padding/margin doesn't affect the width calculation */
+}
+
+/* Individual Banner */
+.banner {
+    width: 100%;  /* Default width for each banner */
+    height: 250px;
+    margin-bottom: 20px; /* Space between banners */
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease;
+    text-decoration: none;
+    color: #fff;
+    position: relative;
+}
+
+.banner img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+/* Text in the Banner */
+.banner h2 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    font-size: 24px;
+    font-weight: bold;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.7);
+}
+
+/* Hover Effects */
+.banner:hover {
+    transform: scale(1.05);
+}
+
+/* Responsive Styles */
+
+/* For Tablets */
+@media screen and (max-width: 1024px) {
+    .banner {
+        width: 48%;  /* Two banners per row */
+    }
+}
+
+/* For Mobile Devices */
+@media screen and (max-width: 768px) {
+    .banner {
+        width: 100%;  /* Full width for each banner */
+        height: 200px; /* Reduce the height */
+    }
+
+    .banner h2 {
+        font-size: 18px; /* Adjust font size for mobile */
+    }
+}
+
+/* For Very Small Screens */
+@media screen and (max-width: 480px) {
+    .banner h2 {
+        font-size: 16px; /* Smaller text on very small screens */
+    }
+}
+h1{
+text-align:center;
+margin-bottom:50px;
+font-family:poppins;
+}
+
+</style>
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Courses</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Explore Online Courses & Interships</h1>
+        
+        <!-- First Banner Container for NPTEL -->
+        <div class="banner-container" id="nptel-container">
+            <a href="https://nptel.ac.in" target="_blank" class="banner">
+                <img src="nptel.jpg" alt="NPTEL Courses">
+            </a>
+        </div>
+
+        <!-- Second Banner Container for Udemy -->
+        <div class="banner-container" id="udemy-container">
+            <a href="https://coursefolder.net/index.php" target="_blank" class="banner">
+                <img src="udemy.jpg" alt="Udemy Courses">
+            </a>
+        </div>
+
+        <!-- Third Banner Container for Other Courses -->
+        <div class="banner-container" id="other-courses-container">
+            <a href="https://www.coursejoiner.com/" target="_blank" class="banner">
+                <img src="intern.jpg" alt="Other Courses">
+                
+            </a>
+        </div>
+        
+    </div>
+</body>
+</html>

@@ -1,1 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <title>Student Information</title>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <style>
+        /* Basic styling for the page */
+        body {
+            font-family: poppins, sans-serif;
+            margin: 20px;
+        }
+
+        #feedback {
+            margin-top: 20px;
+        }
+
+        #attendanceChart, #technicalEvents, #culturalEvents, #academicEvents, #sportsEvents, #onlineCourses {
+            width: 100%;
+            max-width: 600px;
+            margin-bottom: 30px;
+        }
+
+    </style>
+</head>
+<body>
+    <h1>Upload Student Data</h1>
+    
+    <!-- Upload Form -->
+    <form id="uploadForm" enctype="multipart/form-data">
+        <input type="file" name="file" accept=".xlsx, .xls" required><br><br>
+        <button type="button" id="submitButton">Submit</button>
+    </form>
+
+    <!-- Section for displaying charts -->
+    <h3>Attendance</h3>
+    <canvas id="attendanceChart"></canvas>
+
+    <h3>Technical Events</h3>
+    <div id="technicalEvents"></div>
+
+    <h3>Cultural Events</h3>
+    <div id="culturalEvents"></div>
+
+    <h3>Academic Events</h3>
+    <div id="academicEvents"></div>
+
+    <h3>Sports Events</h3>
+    <div id="sportsEvents"></div>
+
+    
+
+    <!-- Section for displaying feedback -->
+    <div id="feedback"></div>
+
+    <script src="dash.js"></script>
+</body>
+</html>
 
